@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="UIXamarin.Controls.NavigationBar">
+    <Grid BackgroundColor="Transparent" ColumnSpacing="0" Padding="0,0,0,0" RowSpacing="0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.20*" />
+            <ColumnDefinition Width="0.6*" />
+            <ColumnDefinition Width="0.20*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="1" />
+        </Grid.RowDefinitions>
+       
+        <StackLayout x:Name="CentralToolBarItemsContainer" Grid.Row="0" Grid.Column="1" HorizontalOptions="Center" Padding="0" VerticalOptions="CenterAndExpand">
+            <Label x:Name="TitleLabel" HorizontalOptions="Center" TextColor="{StaticResource tcolor_i2}" FontAttributes="Bold"
+                   IsVisible="False" Text="{Binding Title}"
+                   FontSize="{StaticResource tsize_i1}" LineBreakMode="TailTruncation" VerticalOptions="Center" VerticalTextAlignment="Center" />
+            <Image x:Name="Logo" HorizontalOptions="Center" IsVisible="True" Source="fLogoSmall" VerticalOptions="Center" />
+        </StackLayout>
+        <StackLayout x:Name="LeftToolBarItemsContainer" Grid.Row="0" Grid.Column="0" HorizontalOptions="StartAndExpand" Orientation="Horizontal" VerticalOptions="CenterAndExpand" Spacing="0" />
+        <StackLayout x:Name="RightToolBarItemsContainer" Grid.Row="0" Grid.Column="2" HorizontalOptions="EndAndExpand" Orientation="Horizontal" VerticalOptions="Center" Spacing="0" />
+        <BoxView x:Name="BottomLine" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" />
+    </Grid>
+</ContentView>
