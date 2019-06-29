@@ -20,19 +20,27 @@
         <!-- APP BACKGROUND COLORS -->
         <Color x:Key="cbg_i1" >#FA897F</Color> <!-- Congo pink      -->
         <Color x:Key="cbg_i2">#FCD5D3</Color> <!-- Coral Candy      -->
-        <Color x:Key="cbg_i3">#EEEEEE</Color> <!-- BackgroundColor  -->
+        <Color x:Key="cbg_i3">#E0EEC3</Color> <!-- BackgroundColor  -->
         <Color x:Key="cbg_i4">White</Color>
-        
+        <Color x:Key="cbg_i5">#FF4E50</Color> <!-- Pink -->
+        <Color x:Key="cbg_i6">#FC913A</Color> <!-- Orange -->
+        <Color x:Key="cbg_i7">#EDE574</Color> <!-- Yellow light (Texas) -->
+        <Color x:Key="cbg_i8">#F9D423</Color>
          <ControlTemplate x:Key="MainPageTemplate">
                 <Grid BackgroundColor="{StaticResource cbg_i3}" RowSpacing="0">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="48" />
                         <RowDefinition Height="1*" />
                     </Grid.RowDefinitions>
-                    <controls:NavigationBar Grid.Row="0" Title="{TemplateBinding Title}" BackgroundColor="{StaticResource cbg_i1}">
+                    <controls:NavigationBar Grid.Row="0" Title="{TemplateBinding Title}" BackgroundColor="{StaticResource cbg_i5}">
                         <controls:NavigationBar.LeftToolbarItems>
-                          <!--  <controls:ClickableContentView Command="{TemplateBinding Parent.BindingContext.BackCommand}" Padding="5">
-                                <Image Margin="10,0" Source="ic_menu" />
+                        <ImageButton IsVisible="{TemplateBinding BindingContext.IsBackVisible}"
+                                     Command="{TemplateBinding BindingContext.BackCommand}" Padding="5"
+                                     Margin="10,0" Source="ic_back"/>
+                        
+                         <!--  <controls:ClickableContentView IsVisible="{TemplateBinding BindingContext.IsBackVisible}" 
+                                                          Command="{TemplateBinding Parent.BindingContext.BackCommand}" Padding="5">
+                                <Image Margin="10,0" Source="ic_back" />
                             </controls:ClickableContentView>-->
                         </controls:NavigationBar.LeftToolbarItems>
                         <controls:NavigationBar.RightToolbarItems>

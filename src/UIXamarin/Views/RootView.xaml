@@ -13,18 +13,18 @@
             <l:RepeatableWrapLayout ItemTapCommand="{Binding ControlDetailsCommand}" 
                                     ItemsSource="{Binding Controls}"
                                     Spacing="10"
-                                    UniformColumns="2"
-                                   >
+                                    UniformColumns="2">
                 <l:RepeatableWrapLayout.ItemTemplate>
                     <DataTemplate>
-                            <Grid Padding="0" BackgroundColor="{StaticResource cbg_i4}" RowSpacing="10">
+                            <Grid Padding="0" BackgroundColor="{StaticResource cbg_i5}" RowSpacing="10">
                                 <Grid.RowDefinitions>
-                                    <RowDefinition Height="10*" />
+                                    <RowDefinition Height="5*" />
                                     <RowDefinition Height="1*" />
                                 </Grid.RowDefinitions>
                                 <Image Grid.Row="0" Source="{Binding Image}" Aspect="AspectFill" />
                                 <Label Grid.Row="1" Text="{Binding Title}" FontSize="{StaticResource tsize_i1}"
-                                       VerticalOptions="Center" HorizontalOptions="Center" />
+                                       TextColor="{StaticResource tcolor_i2}" FontAttributes="Bold"
+                                       VerticalOptions="Center" HorizontalOptions="Center" Margin="0, 5"/>
                             </Grid>
                     </DataTemplate>
                 </l:RepeatableWrapLayout.ItemTemplate>

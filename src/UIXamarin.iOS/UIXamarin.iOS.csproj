@@ -139,5 +139,11 @@
       <Name>UIXamarin</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ic_back%403x.png" />
+    <BundleResource Include="Resources\ic_back%402x.png" />
+    <BundleResource Include="Resources\ic_back.png" />
+    <BundleResource Include="Resources\Buttons.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

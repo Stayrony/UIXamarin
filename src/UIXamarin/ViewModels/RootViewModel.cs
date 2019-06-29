@@ -10,68 +10,32 @@ namespace UIXamarin.ViewModels
 {
     public class RootViewModel : BaseViewModel
     {
-        private readonly INavigationService _navigationService;
-
-        public RootViewModel(INavigationService navigationService)
+        public RootViewModel(INavigationService navigationService):base(navigationService)
         {
-            _navigationService = navigationService;
-
             Controls = new ObservableCollection<Control>
             {
                 new Control
                 {
                     Title = "Buttons",
-                    Image = "https://cdn-images-1.medium.com/max/1600/1*YLUbUqRCoU3cXUCmDImu7g.png",
-                },
-                new Control
-                {
-                    Title = "Buttons",
-                    Image = "http://findyourway.co/wp-content/uploads/2017/05/service-ui.jpg",
-                },
-                new Control
-                {
-                    Title = "Buttons",
-                    Image = "https://cdn-images-1.medium.com/max/1600/1*YLUbUqRCoU3cXUCmDImu7g.png",
-                },
-                new Control
-                {
-                    Title = "Buttons",
-                    Image = "https://cdn-images-1.medium.com/max/1600/1*YLUbUqRCoU3cXUCmDImu7g.png",
-                },new Control
-                {
-                    Title = "Buttons",
-                    Image = "https://cdn-images-1.medium.com/max/1600/1*YLUbUqRCoU3cXUCmDImu7g.png",
-                },
-                new Control
-                {
-                    Title = "Buttons",
-                    Image = "https://cdn-images-1.medium.com/max/1600/1*YLUbUqRCoU3cXUCmDImu7g.png",
-                },
-                 new Control
-                {
-                    Title = "Buttons",
-                    Image = "http://findyourway.co/wp-content/uploads/2017/05/service-ui.jpg",
-                },
+                    Image = "Buttons.png",
+                }
             };
         }
 
 
         #region -- Public properties --
 
-        private ObservableCollection<Control> _Controls;
+        private ObservableCollection<Control> _controls;
         public ObservableCollection<Control> Controls
         {
-            get { return _Controls; }
-            set { SetProperty(ref _Controls, value); }
+            get { return _controls; }
+            set { SetProperty(ref _controls, value); }
         }
 
-        private ICommand _ControlDetailsCommand;
-        public ICommand ControlDetailsCommand => _ControlDetailsCommand ?? (_ControlDetailsCommand = SingleExecutionCommand.FromFunc(OnControlDetailsCommandAsync));
-
-        public ICommand BackCommand => SingleExecutionCommand.FromFunc(OnBackCommandAsync);
+        private ICommand _controlDetailsCommand;
+        public ICommand ControlDetailsCommand => _controlDetailsCommand ?? (_controlDetailsCommand = SingleExecutionCommand.FromFunc(OnControlDetailsCommandAsync));
 
         #endregion
-
 
         private async Task OnControlDetailsCommandAsync(object obj)
         {
@@ -79,14 +43,9 @@ namespace UIXamarin.ViewModels
             {
                 var control = obj as Control;
                 var viewName = $"{control.Title}View";
-                await _navigationService.NavigateAsync(viewName);
+                await NavigationService.NavigateAsync(viewName);
             }
             
-        }
-
-        private async Task OnBackCommandAsync()
-        {
-            await _navigationService.GoBackAsync();
         }
     }
 }
