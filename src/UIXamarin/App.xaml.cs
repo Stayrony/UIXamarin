@@ -45,6 +45,7 @@ namespace UIXamarin
             containerRegistry.RegisterForNavigation<RootView>(nameof(RootView));
             containerRegistry.RegisterForNavigation<ButtonsView>(nameof(ButtonsView));
             containerRegistry.RegisterForNavigation<NavigationPage>();
+            containerRegistry.RegisterForNavigation<NotifyMeView>(nameof(NotifyMeView));
         }
 
         protected override void OnStart()
