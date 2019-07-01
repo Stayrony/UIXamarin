@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<views:BaseContentView xmlns="http://xamarin.com/schemas/2014/forms"
+                       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+                       x:Class="UIXamarin.Views.NotifyMeView"
+                       xmlns:controls="clr-namespace:UIXamarin.Controls" 
+                       xmlns:views="clr-namespace:UIXamarin.Views;assembly=UIXamarin" 
+                       BackgroundColor="{StaticResource cbg_i5}"
+                       ControlTemplate="{StaticResource MainPageTemplate}"
+                       Title="Notify me">
+ <controls:NotifyMeButton VerticalOptions="Center" HorizontalOptions="Center"/>
+</views:BaseContentView>

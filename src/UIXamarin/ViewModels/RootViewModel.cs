@@ -10,7 +10,7 @@ namespace UIXamarin.ViewModels
 {
     public class RootViewModel : BaseViewModel
     {
-        public RootViewModel(INavigationService navigationService):base(navigationService)
+        public RootViewModel(INavigationService navigationService) : base(navigationService)
         {
             Controls = new ObservableCollection<Control>
             {
@@ -21,7 +21,6 @@ namespace UIXamarin.ViewModels
                 }
             };
         }
-
 
         #region -- Public properties --
 
@@ -37,6 +36,8 @@ namespace UIXamarin.ViewModels
 
         #endregion
 
+        #region -- Private helpers --
+
         private async Task OnControlDetailsCommandAsync(object obj)
         {
             if (obj is Control)
@@ -45,7 +46,9 @@ namespace UIXamarin.ViewModels
                 var viewName = $"{control.Title}View";
                 await NavigationService.NavigateAsync(viewName);
             }
-            
+
         }
+
+        #endregion
     }
 }

@@ -4,9 +4,30 @@
                        xmlns:l="clr-namespace:AiForms.Layouts;assembly=AiForms.Layouts" 
                        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
                        x:Class="UIXamarin.Views.ButtonsView"
-                       BackgroundColor="{StaticResource cbg_i3}"
+                       BackgroundColor="{StaticResource cbg_i5}"
                        Title="Buttons"
                        ControlTemplate="{StaticResource MainPageTemplate}">
-    <ContentPage.Content>
-    </ContentPage.Content>
+    <StackLayout Margin="10">
+        <ScrollView HorizontalOptions="FillAndExpand">
+            <l:RepeatableWrapLayout ItemTapCommand="{Binding ButtonDetailsCommand}" 
+                                    ItemsSource="{Binding Buttons}"
+                                    Spacing="10"
+                                    UniformColumns="2">
+                <l:RepeatableWrapLayout.ItemTemplate>
+                    <DataTemplate>
+                            <Grid Padding="0" BackgroundColor="{StaticResource cbg_i5}" RowSpacing="10">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="5*" />
+                                    <RowDefinition Height="1*" />
+                                </Grid.RowDefinitions>
+                                <Image Grid.Row="0" Source="{Binding Image}" Aspect="AspectFill" />
+                                <Label Grid.Row="1" Text="{Binding Title}" FontSize="{StaticResource tsize_i1}"
+                                       TextColor="{StaticResource tcolor_i2}" FontAttributes="Bold"
+                                       VerticalOptions="Center" HorizontalOptions="Center" Margin="0, 5"/>
+                            </Grid>
+                    </DataTemplate>
+                </l:RepeatableWrapLayout.ItemTemplate>
+            </l:RepeatableWrapLayout>
+        </ScrollView>
+    </StackLayout>
 </views:BaseContentView>

@@ -5,7 +5,7 @@
                        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
                        x:Class="UIXamarin.Views.RootView"
                        xmlns:l="clr-namespace:AiForms.Layouts;assembly=AiForms.Layouts" 
-                       BackgroundColor="{StaticResource cbg_i3}"
+                       BackgroundColor="{StaticResource cbg_i5}"
                        ControlTemplate="{StaticResource MainPageTemplate}"
                        Title="Controls">
     <StackLayout Margin="10">

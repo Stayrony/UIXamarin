@@ -15,7 +15,7 @@
         
         <!-- APP TEXT SIZES -->
         <x:Double x:Key="tsize_i1">24</x:Double>
-        <x:Double x:Key="tsize_i2">14</x:Double>
+        <x:Double x:Key="tsize_i2">27</x:Double>
         
         <!-- APP BACKGROUND COLORS -->
         <Color x:Key="cbg_i1" >#FA897F</Color> <!-- Congo pink      -->
@@ -37,11 +37,6 @@
                         <ImageButton IsVisible="{TemplateBinding BindingContext.IsBackVisible}"
                                      Command="{TemplateBinding BindingContext.BackCommand}" Padding="5"
                                      Margin="10,0" Source="ic_back"/>
-                        
-                         <!--  <controls:ClickableContentView IsVisible="{TemplateBinding BindingContext.IsBackVisible}" 
-                                                          Command="{TemplateBinding Parent.BindingContext.BackCommand}" Padding="5">
-                                <Image Margin="10,0" Source="ic_back" />
-                            </controls:ClickableContentView>-->
                         </controls:NavigationBar.LeftToolbarItems>
                         <controls:NavigationBar.RightToolbarItems>
                             
